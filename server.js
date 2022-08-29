@@ -24,7 +24,7 @@ app.get('/notes', (req, res)=>{
 })
 
 //api to db.json
-app.get('/api/data', (req, res)=>{
+app.get('/api/notes', (req, res)=>{
   res.json(data);
 })
 
