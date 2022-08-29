@@ -1,15 +1,19 @@
 const express = require('express');
 const PORT = process.env.PORT || 3001;
 const data = require('./db/db.json');
+const path = require('path');
 
 
 
 const app = express();
 
+//express middleware
+app.use(express.static('public'))
+
 // api to display html file
-app.get('/html', (req, res) =>{
+app.get('/', (req, res) =>{
  
-  res.sendFile(__dirname + '/public/index.html');
+  res.sendFile(path.join(__dirname + '/public/index.html'));
   
 })
 
