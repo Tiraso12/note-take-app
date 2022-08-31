@@ -51,9 +51,16 @@ router.delete('/notes/:id', (req, res) => {
     const id = req.params.id;
     //find the index that matches the id in the req paramn and stores it in a const
     const noteId = data.findIndex(data => data.id === id )
-
+    //removes the object from the json file
     data.splice(noteId, 1)
 
+    //update the db.file with the new list of notes //writing the json file with new notes updated
+        fs.writeFile('./db/db.json', JSON.stringify(data, null, 4),
+        (writeErr) =>
+            writeErr
+                ? console.error(writeErr)
+                : console.info(`a note was deleted!`)
+    )
     res.json(data);
 })
 
