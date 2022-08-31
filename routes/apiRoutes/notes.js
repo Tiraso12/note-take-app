@@ -5,6 +5,7 @@ const fs = require('fs');
 
 //api to db.json
 router.get('/notes', (req, res) => {
+    //return the array form the db
     res.json(data);
 })
 
@@ -20,7 +21,7 @@ router.post('/notes', (req, res) => {
     //if all properties true create object
     if (title && text) {
         const newNote = {
-            id : id,
+            id: id,
             title,
             text
         }
@@ -42,6 +43,18 @@ router.post('/notes', (req, res) => {
         res.json(response);
     }
 
+})
+
+// //API TO DELETE
+router.delete('/notes/:id', (req, res) => {
+    //taking id parameter from request
+    const id = req.params.id;
+    //find the index that matches the id in the req paramn and stores it in a const
+    const noteId = data.findIndex(data => data.id === id )
+
+    data.splice(noteId, 1)
+
+    res.json(data);
 })
 
 module.exports = router;

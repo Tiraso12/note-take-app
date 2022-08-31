@@ -1,6 +1,5 @@
 const express = require('express');
 const PORT = process.env.PORT || 3001;
-const fs = require('fs');
 const htmlRoutes = require('./routes/htmlRoutes');
 const apiRoutes = require('./routes/apiRoutes/notes');
 
@@ -14,18 +13,6 @@ app.use(express.json());
 app.use('/',htmlRoutes);
 app.use('/api', apiRoutes);
 
-
-
-
-
-
-
-
-
-//API TO DELETE
-app.delete('/api/notes/:id', (req,res)=>{
-
-})
 
 
 
