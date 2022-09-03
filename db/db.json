@@ -1,1 +1,17 @@
-[]
+[
+    {
+        "id": "0",
+        "title": "Drop boxes at store",
+        "text": "drop the boxes before midday thursday"
+    },
+    {
+        "id": "1",
+        "title": "return email",
+        "text": "send responses of emails"
+    },
+    {
+        "id": "2",
+        "title": "groceries",
+        "text": "grocerie shopping"
+    }
+]
